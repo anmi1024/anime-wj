@@ -1,0 +1,10 @@
+xin/wangjue/ws/ObjectFactory.class
+xin/wangjue/ws/package-info.class
+xin/wangjue/ws/Language.class
+xin/wangjue/endpoint/UserEndpoint.class
+xin/wangjue/Application.class
+xin/wangjue/ws/User.class
+xin/wangjue/ws/GetUserRequest.class
+xin/wangjue/ws/GetUserResponse.class
+xin/wangjue/App.class
+xin/wangjue/config/WebServiceConfig.class

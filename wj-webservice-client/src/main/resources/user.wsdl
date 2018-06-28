@@ -1,0 +1,66 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://wangjue.xin/ws" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://wangjue.xin/ws" targetNamespace="http://wangjue.xin/ws">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://wangjue.xin/ws">
+            <xs:element name="getUserRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="userName" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getUserResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="user" type="tns:user"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="user">
+                <xs:sequence>
+                    <xs:element name="userName" type="xs:string"/>
+                    <xs:element name="name" type="xs:string"/>
+                    <xs:element name="sex" type="xs:string"/>
+                    <xs:element name="age" type="xs:long"/>
+                    <xs:element name="language" type="tns:language"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="language">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="JAVA"/>
+                    <xs:enumeration value="SCALA"/>
+                    <xs:enumeration value="PYTHON"/>
+                    <xs:enumeration value="DOCKER"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getUserRequest">
+        <wsdl:part element="tns:getUserRequest" name="getUserRequest"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getUserResponse">
+        <wsdl:part element="tns:getUserResponse" name="getUserResponse"></wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="UserPort">
+        <wsdl:operation name="getUser">
+            <wsdl:input message="tns:getUserRequest" name="getUserRequest"></wsdl:input>
+            <wsdl:output message="tns:getUserResponse" name="getUserResponse"></wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="UserPortSoap11" type="tns:UserPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getUser">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getUserRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getUserResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="UserPortService">
+        <wsdl:port binding="tns:UserPortSoap11" name="UserPortSoap11">
+            <soap:address location="http://wangjue.xin/ws"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

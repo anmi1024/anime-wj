@@ -1,0 +1,10 @@
+xin/wangjue/Swagger2.class
+xin/wangjue/domain/entity/SysUser.class
+xin/wangjue/controller/AreaController.class
+xin/wangjue/dao/SysUserDao.class
+xin/wangjue/Application.class
+xin/wangjue/domain/entity/Area.class
+xin/wangjue/dao/AreaDao.class
+xin/wangjue/App.class
+xin/wangjue/service/impl/AreaServiceImpl.class
+xin/wangjue/service/AreaService.class

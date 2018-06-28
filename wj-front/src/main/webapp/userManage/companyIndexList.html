@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>企业列表</title>
+</head>
+<body>
+<div id="search-form">
+    <form class="form-inline" role="form">
+        <label for="companyFullName">企业全称</label>
+        <input type="text" class="form-control" id="companyFullName" placeholder="企业全称">
+        <label>状态</label>
+        <select class="form-control" id="statusVersion">
+            <option selected>全部</option>
+            <option>专业版</option>
+            <option>共享版</option>
+            <option>智享版</option>
+        </select>
+        <label>所在地</label>
+        <select class="form-control" id="province">
+            <option selected>全部</option>
+            <option>北京</option>
+            <option>上海</option>
+        </select>
+        <select class="form-control" id="city">
+            <option selected>全部</option>
+            <option>专业版</option>
+            <option>北京</option>
+            <option>上海</option>
+        </select>
+        <label>状态</label>
+        <select class="form-control" id="statusLevel">
+            <option selected>全部</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <button type="submit" class="btn btn-default">查询</button>
+    </form>
+</div>
+<div id="view-table"> </div>
+</body>
+</html>
