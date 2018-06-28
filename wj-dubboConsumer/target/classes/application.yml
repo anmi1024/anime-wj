@@ -1,9 +1,0 @@
-server:
-  port: 8001
-  tomcat:
-    uri-encoding: UTF-8
-spring:
-  application:
-    name: dubbo-spring-boot-starter-consumer
-  dubbo:
-    registry: zookeeper://127.0.0.1:2181
